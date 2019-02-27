@@ -1,0 +1,40 @@
+﻿@using MvcindentityBank.Models.ViewsModels
+@model RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <h4>Registration Form</h4>
+        <hr />
+        @Html.ValidationSummary()
+        <div>
+            @Html.DisplayNameFor(m => m.Email)
+            @Html.DisplayFor(m => m.Email)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m => m.Password)
+            @Html.DisplayFor(m => m.Password)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m => m.PasswordConfirm)
+            @Html.DisplayFor(m => m.PasswordConfirm)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m => m.SkinColor)
+            @Html.DisplayFor(m => m.SkinColor)
+        </div>
+        <div>
+            <input type="submit" value="Reg Me Pls!" />
+        </div>
+        <div>
+            <input type="reset" value="Clear form" />
+        </div>
+    </div>
+} 
